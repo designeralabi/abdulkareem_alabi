@@ -1,0 +1,134 @@
+﻿@inherits LayoutComponentBase
+
+<div id="app-root" class="dark text-white flex min-h-screen w-full fixed top-0 left-0 overflow-y-auto">
+    @* left div *@
+    <div id="sidebar" class="bg-black h-screen px-12 w-[50%] mx-auto flex flex-col justify-center relative">
+        <div class="my-6">
+            <h3 class="text-xl mb-7 font-light">Open to Work</h3>
+        </div>
+        @* Theme toggle button *@
+        <button onclick="toggleTheme()" class="absolute top-11 right-4 z-50 cursor-pointer p-2 rounded-full">
+            <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 7.66l-.71-.71M4.05 4.05l-.71-.71M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M21.752 15.002A9.718 9.718 0 0112.003 21c-5.385 0-9.75-4.365-9.75-9.75 0-4.296 2.784-7.943 6.648-9.252a.75.75 0 01.958.884 8.25 8.25 0 0011.009 11.009.75.75 0 01.884.958z" />
+            </svg>
+        </button>
+
+        <div>
+            <div class="w-40 h-40 rounded-full mb-6 overflow-hidden">
+                <img src="/images/abdulkareem_alabi.webp" alt="Abdulkareem Alabi Avatar" />
+                <Blazicon Svg="GoogleMaterialOutlinedIcon.AddAlert" class="bg-red-700 h-48 w-48"></Blazicon>
+            </div>
+
+            <h1 class="text-4xl font-light outline-none">
+                Hi, I'm 👋<br />Abdulkareem <span class="font-medium">Alabi</span>
+            </h1>
+            <h3 class="my-4 text-sm">
+                Self-taught FullStack Engineer specializing in ASP.NET Core, with 5+ years of experience building
+                responsive front-ends, scalable Web APIs, and reliable C# code. Key achievements include reducing API
+                response times by 40%, enhancing code reliability through testing, and supporting high-traffic
+                applications. Proficient in C#, .NET, unit testing, and Agile environments. Eager to contribute to
+                innovative features and grow within a passionate remote team. Let's collaborate!
+            </h3>
+            <div class="flex flex-col gap-y-2 text-sm mt-6">
+                <div class="flex items-center gap-x-2">
+                    <h3 onclick="openContactModal()" class="theme-btn cursor-pointer bg-white text-black px-4 py-3 rounded-sm font-medium">Let's Talk
+                    </h3>
+                    <a href="mailto:bdlkrmalabi@gmail.com"
+                       class="bg-gray-600/40 text-white px-4 py-3 rounded-sm cursor-pointer">Send Email</a>
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <a href="https://www.linkedin.com/in/abdulkareem-alabi-3985523a4/" target="_blank">
+                        <h3 class="bg-blue-600 text-white px-4 py-3 rounded-sm cursor-pointer">LinkedIn</h3>
+                    </a>
+                    <h3 class="theme-btn cursor-pointer bg-white text-black px-4 py-3 rounded-sm font-medium">Download
+                        Resume</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-9">
+                <h3 class="text-2xl">Services</h3>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    @foreach (var stack in abdulkareem_alabi.Data.TechStackData.TechStacks)
+                    {
+                        <span class="service-tag bg-gray-300/10 text-sm px-4 py-2 rounded-sm">@stack.Category</span>
+                    }
+                </div>
+            </div>
+
+            <div class="mt-6"></div>
+        </div>
+
+        <main id="main-content" class="bg-black/95 w-full h-screen overflow-y-auto">
+            <article>
+                @Body
+            </article>
+        </main>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const root = document.getElementById('app-root');
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('main-content');
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            const isDark = root.classList.contains('dark');
+
+            if (isDark) {
+                root.classList.remove('dark');
+                root.classList.add('light');
+                root.classList.remove('text-white');
+                root.classList.add('text-black');
+                sidebar.classList.remove('bg-black');
+                sidebar.classList.add('bg-white');
+                mainContent.classList.remove('bg-amber-500');
+                mainContent.classList.add('bg-gray-100');
+                document.querySelectorAll('.theme-btn').forEach(function (btn) {
+                    btn.classList.remove('bg-white', 'text-black');
+                    btn.classList.add('bg-black', 'text-white');
+                });
+                document.querySelectorAll('.service-tag').forEach(function (tag) {
+                    tag.classList.remove('bg-gray-300/10');
+                    tag.classList.add('bg-gray-200');
+                });
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                root.classList.remove('light');
+                root.classList.add('dark');
+                root.classList.remove('text-black');
+                root.classList.add('text-white');
+                sidebar.classList.remove('bg-white');
+                sidebar.classList.add('bg-black');
+                mainContent.classList.remove('bg-gray-100');
+                mainContent.classList.add('bg-amber-500');
+                document.querySelectorAll('.theme-btn').forEach(function (btn) {
+                    btn.classList.remove('bg-black', 'text-white');
+                    btn.classList.add('bg-white', 'text-black');
+                });
+                document.querySelectorAll('.service-tag').forEach(function (tag) {
+                    tag.classList.remove('bg-gray-200');
+                    tag.classList.add('bg-gray-300/10');
+                });
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        }
+
+        // Apply saved theme on load
+        (function () {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'light') {
+                toggleTheme();
+            }
+        })();
+    </script>

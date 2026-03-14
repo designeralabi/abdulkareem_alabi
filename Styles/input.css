@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'ClashDisplay';
+    src: url('fonts/ClashDisplay-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@theme {
+    --font-sans: ClashDisplay, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@import "tailwindcss";
+
+.contact-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+

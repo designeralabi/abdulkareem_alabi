@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "tZSSrRHOZLA=",
+  "success": true,
+  "projectFilePath": "/Users/apple/development/frontend/abdulkareem_alabi/abdulkareem_alabi/abdulkareem_alabi.csproj",
+  "expectedPackageFiles": [
+    "/Users/apple/.nuget/packages/blazicons/3.0.12/blazicons.3.0.12.nupkg.sha512",
+    "/Users/apple/.nuget/packages/blazicons.googlematerialdesign/3.0.4/blazicons.googlematerialdesign.3.0.4.nupkg.sha512",
+    "/Users/apple/.nuget/packages/blazorcomponentutilities/1.8.0/blazorcomponentutilities.1.8.0.nupkg.sha512",
+    "/Users/apple/.nuget/packages/microsoft.aspnetcore.app.internal.assets/10.0.1/microsoft.aspnetcore.app.internal.assets.10.0.1.nupkg.sha512",
+    "/Users/apple/.nuget/packages/mudblazor/9.1.0/mudblazor.9.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

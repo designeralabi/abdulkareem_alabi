@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Components/Fonts/" />
+    <Folder Include="Data/" />
+    <Folder Include="Models/" />
+    <Folder Include="Styles/" />
+    <Folder Include="wwwroot/images/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazicons.GoogleMaterialDesign" Version="3.0.4" />
+    <PackageReference Include="MudBlazor" Version="9.1.0" />
+  </ItemGroup>
+
+</Project>

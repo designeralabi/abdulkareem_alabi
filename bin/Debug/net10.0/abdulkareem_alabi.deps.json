@@ -1,0 +1,93 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "abdulkareem_alabi/1.0.0": {
+        "dependencies": {
+          "Blazicons.GoogleMaterialDesign": "3.0.4",
+          "MudBlazor": "9.1.0"
+        },
+        "runtime": {
+          "abdulkareem_alabi.dll": {}
+        }
+      },
+      "Blazicons/3.0.12": {
+        "dependencies": {
+          "BlazorComponentUtilities": "1.8.0"
+        },
+        "runtime": {
+          "lib/net10.0/Blazicons.dll": {
+            "assemblyVersion": "3.0.12.0",
+            "fileVersion": "3.0.12.0"
+          }
+        }
+      },
+      "Blazicons.GoogleMaterialDesign/3.0.4": {
+        "dependencies": {
+          "Blazicons": "3.0.12"
+        },
+        "runtime": {
+          "lib/net10.0/Blazicons.GoogleMaterialDesign.dll": {
+            "assemblyVersion": "3.0.4.0",
+            "fileVersion": "3.0.4.0"
+          }
+        }
+      },
+      "BlazorComponentUtilities/1.8.0": {
+        "runtime": {
+          "lib/netstandard2.0/BlazorComponentUtilities.dll": {
+            "assemblyVersion": "1.8.0.0",
+            "fileVersion": "1.8.0.0"
+          }
+        }
+      },
+      "MudBlazor/9.1.0": {
+        "runtime": {
+          "lib/net10.0/MudBlazor.dll": {
+            "assemblyVersion": "9.1.0.0",
+            "fileVersion": "9.1.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "abdulkareem_alabi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Blazicons/3.0.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VXLFGvTm7QhScNYOUBdiQmafZFc+mJxgYlqmUrJRbZwftd71e9qQl2kDuyxONyjm48uywxBgQHI7RqOgAA6iZA==",
+      "path": "blazicons/3.0.12",
+      "hashPath": "blazicons.3.0.12.nupkg.sha512"
+    },
+    "Blazicons.GoogleMaterialDesign/3.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oDjpQf8pSmWOmykOgf2fR8eEI+FWSJUzi8K1DlNpo9qUfRvZXEX+m2lc7LcomeP+5c3nEa+7DcfCptbSXc26OQ==",
+      "path": "blazicons.googlematerialdesign/3.0.4",
+      "hashPath": "blazicons.googlematerialdesign.3.0.4.nupkg.sha512"
+    },
+    "BlazorComponentUtilities/1.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M0HwFRId0RLNxDlG0UntB92oeduAaHHhgtUrHb9eAw6KzOVMemlxY8sNWhDQWiLfBCXIVnd/wtm6mmQbURfzfA==",
+      "path": "blazorcomponentutilities/1.8.0",
+      "hashPath": "blazorcomponentutilities.1.8.0.nupkg.sha512"
+    },
+    "MudBlazor/9.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iy+kj3IWQsVh2r+xO9Yc8lUNuZWFy/zSGY+DV8uessNJrOrvmKef3+bDPEU0a+WmhP1xWU3bOThyiTlEhcco5A==",
+      "path": "mudblazor/9.1.0",
+      "hashPath": "mudblazor.9.1.0.nupkg.sha512"
+    }
+  }
+}

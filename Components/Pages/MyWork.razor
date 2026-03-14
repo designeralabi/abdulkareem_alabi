@@ -1,0 +1,103 @@
+<div class="mt-12">
+    <div class="flex items-center justify-between mb-8">
+        <h2 class="text-3xl font-semibold">My Work</h2>
+        <div class="flex items-center gap-2">
+            <button id="grid-view-btn" onclick="setWorkView('grid')"
+                    class="flex items-center gap-1.5 px-3 py-2 rounded-sm bg-gray-600/40 cursor-pointer transition-colors text-sm font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                </svg>
+                Grid
+            </button>
+            <button id="list-view-btn" onclick="setWorkView('list')"
+                    class="flex items-center gap-1.5 px-3 py-2 rounded-sm bg-transparent cursor-pointer transition-colors text-sm font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                List
+            </button>
+        </div>
+    </div>
+
+    @* Grid view (default) *@
+    <div id="work-grid-view" class="grid grid-cols-2 gap-6">
+        @foreach (var project in abdulkareem_alabi.Data.ProjectData.Projects)
+        {
+            <div class="bg-black text-white rounded-sm p-8">
+                <span class="text-4xl text-gray-500 font-serif leading-none">"</span>
+                <h3 class="text-xl font-semibold mt-2 mb-3">@project.Title</h3>
+                <p class="text-sm leading-relaxed text-gray-300 mb-4">@project.Description</p>
+                <div class="border-l-2 border-white pl-4 mb-4">
+                    <p class="text-sm font-medium">@project.Role</p>
+                    <p class="text-sm text-gray-400">@@@project.Client</p>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    @foreach (var tag in project.Tags)
+                    {
+                        <span class="bg-gray-800 text-xs px-3 py-1.5 rounded-sm text-gray-300">@tag</span>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+    @* List view (hidden by default) *@
+    <div id="work-list-view" class="hidden space-y-8">
+        @foreach (var project in abdulkareem_alabi.Data.ProjectData.Projects)
+        {
+            <div class="bg-black text-white rounded-sm p-10 flex gap-10 items-center">
+                <div class="flex-1">
+                    <span class="text-4xl text-gray-500 font-serif leading-none">"</span>
+                    <h3 class="text-2xl font-semibold mt-2 mb-4">@project.Title</h3>
+                    <p class="text-sm leading-relaxed text-gray-300 mb-6">@project.Description</p>
+                    <div class="border-l-2 border-white pl-4">
+                        <p class="text-sm font-medium">@project.Role</p>
+                        <p class="text-sm text-gray-400">@@@project.Client</p>
+                    </div>
+                </div>
+                <div class="w-80 shrink-0">
+                    <div class="relative border border-gray-700 p-6">
+                        <span class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white"></span>
+                        <span class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white"></span>
+                        <span class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white"></span>
+                        <h4 class="text-sm font-semibold mb-4 text-gray-400 uppercase tracking-wider">Tech Stack</h4>
+                        <div class="flex flex-wrap gap-2">
+                            @foreach (var tag in project.Tags)
+                            {
+                                <span class="bg-gray-800 text-xs px-3 py-1.5 rounded-sm text-gray-300">@tag</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    function setWorkView(view) {
+        var gridView = document.getElementById('work-grid-view');
+        var listView = document.getElementById('work-list-view');
+        var gridBtn = document.getElementById('grid-view-btn');
+        var listBtn = document.getElementById('list-view-btn');
+
+        if (view === 'grid') {
+            gridView.classList.remove('hidden');
+            listView.classList.add('hidden');
+            gridBtn.classList.add('bg-gray-600/40');
+            gridBtn.classList.remove('bg-transparent');
+            listBtn.classList.remove('bg-gray-600/40');
+            listBtn.classList.add('bg-transparent');
+        } else {
+            gridView.classList.add('hidden');
+            listView.classList.remove('hidden');
+            listBtn.classList.add('bg-gray-600/40');
+            listBtn.classList.remove('bg-transparent');
+            gridBtn.classList.remove('bg-gray-600/40');
+            gridBtn.classList.add('bg-transparent');
+        }
+    }
+</script>
