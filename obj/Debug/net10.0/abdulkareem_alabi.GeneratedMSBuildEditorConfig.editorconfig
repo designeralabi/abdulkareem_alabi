@@ -29,6 +29,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/apple/development/frontend/abdulkareem_alabi/abdulkareem_alabi/Components/Layout/BlankLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvQmxhbmtMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/apple/development/frontend/abdulkareem_alabi/abdulkareem_alabi/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -45,6 +49,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/apple/development/frontend/abdulkareem_alabi/abdulkareem_alabi/Components/Pages/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Gb290ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/apple/development/frontend/abdulkareem_alabi/abdulkareem_alabi/Components/Pages/GrowToday.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Hcm93VG9kYXkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/apple/development/frontend/abdulkareem_alabi/abdulkareem_alabi/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -55,6 +67,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/apple/development/frontend/abdulkareem_alabi/abdulkareem_alabi/Components/Pages/NotFound.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ob3RGb3VuZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/apple/development/frontend/abdulkareem_alabi/abdulkareem_alabi/Components/Pages/ScheduleCall.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9TY2hlZHVsZUNhbGwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/apple/development/frontend/abdulkareem_alabi/abdulkareem_alabi/Components/Routes.razor]

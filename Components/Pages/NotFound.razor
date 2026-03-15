@@ -1,5 +1,47 @@
 ﻿@page "/not-found"
-@layout MainLayout
+@layout Layout.BlankLayout
 
-<h3>Not Found</h3>
-<p>Sorry, the content you are looking for does not exist.</p>
+<div class="relative w-full h-screen overflow-hidden bg-black text-white">
+    @* Background portrait image *@
+    <div class="absolute inset-0 flex justify-center">
+        <img src="/images/abdulkareem_alabi.webp" alt="Abdulkareem Alabi"
+             class="h-full w-auto max-w-none object-cover opacity-60" style="object-position: center top;" />
+        <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-black/40"></div>
+    </div>
+
+    @* Dot accent — left side *@
+    <div class="absolute left-16 top-1/2 -translate-y-1/2 z-10">
+        <div class="w-5 h-5 bg-white rounded-full"></div>
+    </div>
+
+    @* Large overlay name *@
+    <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none select-none">
+        <h1 class="text-[12rem] font-bold tracking-tight leading-none text-white" style="mix-blend-mode: difference;">
+            Abdulkareem
+        </h1>
+    </div>
+
+    @* 404 indicator — top center *@
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 z-10 text-center">
+        <span class="text-xs tracking-[0.3em] uppercase text-gray-400">Page Not Found</span>
+    </div>
+
+    @* Bottom left — location *@
+    <div class="absolute bottom-10 left-16 z-10">
+        <p class="text-xs tracking-[0.25em] uppercase text-gray-300">Based in Lagos, Nigeria</p>
+    </div>
+
+    @* Bottom right — role & tagline *@
+    <div class="absolute bottom-10 right-16 z-10 text-right">
+        <p class="text-4xl font-light leading-tight">FullStack Developer</p>
+        <p class="text-4xl font-light leading-tight">Design Systems & AI</p>
+    </div>
+
+    @* Center bottom — back home link *@
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+        <a href="/"
+               class="text-sm tracking-widest uppercase border border-white/30 px-6 py-3 hover:bg-white hover:text-black transition-colors">
+            Back to Home
+        </a>
+    </div>
+</div>

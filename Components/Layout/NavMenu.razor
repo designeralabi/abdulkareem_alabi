@@ -1,3 +1,16 @@
-﻿<div>
-    Navbar
-</div>
+﻿<div id="floating-nav" class="sticky bottom-6 z-40 flex justify-center mb-6 pointer-events-none">
+    <div
+        class="pointer-events-auto flex items-center gap-1 bg-gray-800/90 backdrop-blur-sm rounded-xl px-2 py-2 shadow-lg shadow-black/30 border border-gray-700/50">
+        <span class="bg-black text-white font-bold text-sm px-4 py-2.5 rounded-lg">A<span
+            class="text-blue-500">.</span></span>
+            <button onclick="document.getElementById('main-content').scrollTo({top:0,behavior:'smooth'})"
+                    class="text-sm px-4 py-2.5 rounded-lg border border-blue-500/50 text-blue-400 hover:bg-blue-600/20 transition-colors cursor-pointer">Info</button>
+            <button onclick="document.querySelector('#work-section')?.scrollIntoView({behavior:'smooth'})"
+                    class="text-sm px-4 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700/50 transition-colors cursor-pointer">Elements</button>
+            <button onclick="document.querySelector('footer')?.scrollIntoView({behavior:'smooth'})"
+                    class="text-sm px-4 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700/50 transition-colors cursor-pointer">Votes</button>
+            <a href="https://www.linkedin.com/in/abdulkareem-alabi-3985523a4/" target="_blank"
+                   class="text-sm font-medium px-5 py-2.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors cursor-pointer">Visit
+                Site</a>
+            </div>
+        </div>

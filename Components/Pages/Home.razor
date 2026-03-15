@@ -19,10 +19,13 @@
     @* my projects *@
     <MyWork />
 
+    @* Grow Today - agency showcase *@
+    <GrowToday />
+
     @* Contact Modal *@
     <div id="contact-modal" class="hidden fixed inset-0 z-100 items-center justify-center">
         <div class="absolute inset-0 bg-black/70" onclick="closeContactModal()"></div>
-        <div class="relative bg-black text-white rounded-sm p-10 max-w-2xl w-full mx-4">
+        <div class="theme-modal relative bg-black text-white rounded-sm p-10 max-w-2xl w-full mx-4">
             @* Close button *@
             <button onclick="closeContactModal()"
                     class="absolute top-4 right-4 text-gray-400 hover:text-white cursor-pointer transition-colors">
@@ -32,307 +35,307 @@
                 </svg>
             </button>
 
-            <h2 class="text-2xl font-semibold mb-8 text-center tracking-widest uppercase">Leave A Message</h2>
+            <h2 class="text-2xl font-semibold mb-2 text-center tracking-widest uppercase">Get In Touch</h2>
+            <p class="text-sm text-gray-400 text-center mb-8 px-12">Have a project in mind or want to collaborate? Fill
+                out
+                the form below and I'll get back to you within 24 hours.</p>
 
-            <div class="flex items-center gap-x-3 mb-8" id="contact-type-group">
-                <label
-                    class="contact-type-label flex items-center gap-x-2 cursor-pointer px-4 py-2 rounded-sm border border-blue-600 bg-blue-600 transition-colors">
-                    <input type="checkbox" name="contactType" value="Freelance Project" checked
-                           class="contact-checkbox appearance-none w-4.5 h-4.5 border border-white rounded-[3px] bg-transparent checked:bg-transparent relative cursor-pointer shrink-0"
-                           onclick="selectContactType(this)" />
-                    <span class="text-sm">Freelance Project</span>
-                </label>
-                <label
-                    class="contact-type-label flex items-center gap-x-2 cursor-pointer px-4 py-2 rounded-sm border border-gray-700 transition-colors">
-                    <input type="checkbox" name="contactType" value="Job/Contract"
-                           class="contact-checkbox appearance-none w-4.5 h-4.5 border border-gray-500 rounded-[3px] bg-transparent checked:bg-transparent relative cursor-pointer shrink-0"
-                           onclick="selectContactType(this)" />
-                    <span class="text-sm">Job/Contract</span>
-                </label>
-                <label
-                    class="contact-type-label flex items-center gap-x-2 cursor-pointer px-4 py-2 rounded-sm border border-gray-700 transition-colors">
-                    <input type="checkbox" name="contactType" value="Other"
-                           class="contact-checkbox appearance-none w-4.5 h-4.5 border border-gray-500 rounded-[3px] bg-transparent checked:bg-transparent relative cursor-pointer shrink-0"
-                           onclick="selectContactType(this)" />
-                    <span class="text-sm">Other</span>
-                </label>
+                <div class="flex items-center gap-x-3 mb-8" id="contact-type-group">
+                    <label
+                        class="contact-type-label flex items-center gap-x-2 cursor-pointer px-4 py-2 rounded-sm border border-blue-600 bg-blue-600 transition-colors">
+                        <input type="checkbox" name="contactType" value="Freelance Project" checked
+                               class="contact-checkbox appearance-none w-4.5 h-4.5 border border-white rounded-[3px] bg-transparent checked:bg-transparent relative cursor-pointer shrink-0"
+                               onclick="selectContactType(this)" />
+                        <span class="text-sm">Freelance Project</span>
+                    </label>
+                    <label
+                        class="contact-type-label flex items-center gap-x-2 cursor-pointer px-4 py-2 rounded-sm border border-gray-700 transition-colors">
+                        <input type="checkbox" name="contactType" value="Job/Contract"
+                               class="contact-checkbox appearance-none w-4.5 h-4.5 border border-white rounded-[3px] bg-transparent checked:bg-transparent relative cursor-pointer shrink-0"
+                               onclick="selectContactType(this)" />
+                        <span class="text-sm">Job / Contract</span>
+                    </label>
+                    <label
+                        class="contact-type-label flex items-center gap-x-2 cursor-pointer px-4 py-2 rounded-sm border border-gray-700 transition-colors">
+                        <input type="checkbox" name="contactType" value="Collaboration"
+                               class="contact-checkbox appearance-none w-4.5 h-4.5 border border-white rounded-[3px] bg-transparent checked:bg-transparent relative cursor-pointer shrink-0"
+                               onclick="selectContactType(this)" />
+                        <span class="text-sm">Collaboration</span>
+                    </label>
+                </div>
+
+                <div class="grid grid-cols-2 gap-x-4 gap-y-6 mb-6">
+                    <fieldset class="border border-gray-700 rounded-sm px-4 pb-4 pt-1">
+                        <legend class="text-xs font-semibold tracking-wider px-1">FULL NAME *</legend>
+                        <input type="text" placeholder="John Doe"
+                               class="w-full bg-transparent outline-none text-sm text-white placeholder-gray-500" />
+                    </fieldset>
+
+                    <fieldset class="border border-gray-700 rounded-sm px-4 pb-4 pt-1">
+                        <legend class="text-xs font-semibold tracking-wider px-1">EMAIL ADDRESS *</legend>
+                        <input type="email" placeholder="john@company.com"
+                               class="w-full bg-transparent outline-none text-sm text-white placeholder-gray-500" />
+                    </fieldset>
+                </div>
+
+                <div class="space-y-6">
+                    <fieldset class="border border-gray-700 rounded-sm px-4 pb-4 pt-1">
+                        <legend class="text-xs font-semibold tracking-wider px-1">PROJECT DETAILS *</legend>
+                        <textarea rows="5"
+                                  placeholder="Tell me about your project — goals, timeline, and any specific requirements..."
+                                  class="w-full bg-transparent outline-none text-sm text-white placeholder-gray-500 resize-none"></textarea>
+                    </fieldset>
+                </div>
+
+                <button
+                    class="mt-8 w-full bg-blue-600 text-white px-6 py-3.5 rounded-sm text-sm font-semibold tracking-wider uppercase flex items-center justify-center gap-x-2 cursor-pointer hover:bg-blue-700 transition-colors">
+                    SEND MESSAGE
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+                </button>
             </div>
+        </div>
 
-            <div class="space-y-6">
-                <fieldset class="border border-gray-700 rounded-sm px-4 pb-4 pt-1">
-                    <legend class="text-xs font-semibold tracking-wider px-1">NAME*</legend>
-                    <input type="text" placeholder="Your name"
-                           class="w-full bg-transparent outline-none text-sm text-white placeholder-gray-500" />
-                </fieldset>
+        @* Schedule a Call *@
+        <ScheduleCall />
+    </div>
 
-                <fieldset class="border border-gray-700 rounded-sm px-4 pb-4 pt-1">
-                    <legend class="text-xs font-semibold tracking-wider px-1">EMAIL*</legend>
-                    <input type="email" placeholder="Your email"
-                           class="w-full bg-transparent outline-none text-sm text-white placeholder-gray-500" />
-                </fieldset>
+    @* Footer *@
+    <Footer />
 
-                <fieldset class="border border-gray-700 rounded-sm px-4 pb-4 pt-1">
-                    <legend class="text-xs font-semibold tracking-wider px-1">MESSAGE*</legend>
-                    <textarea rows="5" placeholder="I'd like to work with you to..."
-                              class="w-full bg-transparent outline-none text-sm text-white placeholder-gray-500 resize-none"></textarea>
-                </fieldset>
-            </div>
-
-            <button
-                class="mt-6 bg-gray-600 text-white px-6 py-3 rounded-sm text-sm font-medium flex items-center gap-x-2 cursor-pointer hover:bg-gray-500 transition-colors">
-                SEND
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+    @* Schedule Modal *@
+    <div id="schedule-modal" class="hidden fixed inset-0 z-100 items-center justify-center">
+        <div class="absolute inset-0 bg-black/70" onclick="closeScheduleModal()"></div>
+        <div
+            class="theme-modal relative bg-gray-950 text-white rounded-sm w-full max-w-5xl mx-4 p-8 flex gap-8 max-h-[90vh] overflow-y-auto">
+            @* Close button *@
+            <button onclick="closeScheduleModal()"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-white cursor-pointer transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-        </div>
-    </div>
 
-    @* schedule a call *@
-    <div class="mt-12 text-center">
-        <h2 class="text-3xl font-semibold mb-4">Schedule a Call</h2>
-        <p class="text-sm text-gray-600 mb-6">Pick a date and time that works for you. Let's have a 30 minute meeting.
-        </p>
-        <button onclick="openScheduleModal()"
-                class="bg-black text-white px-8 py-3 rounded-sm text-sm font-medium cursor-pointer hover:bg-gray-800 transition-colors">
-            Book a 30 Min Meeting
-        </button>
-    </div>
-</div>
-
-@* Schedule Modal *@
-<div id="schedule-modal" class="hidden fixed inset-0 z-100 items-center justify-center">
-    <div class="absolute inset-0 bg-black/70" onclick="closeScheduleModal()"></div>
-    <div
-        class="relative bg-gray-950 text-white rounded-sm w-full max-w-5xl mx-4 p-8 flex gap-8 max-h-[90vh] overflow-y-auto">
-        @* Close button *@
-        <button onclick="closeScheduleModal()"
-                class="absolute top-4 right-4 text-gray-400 hover:text-white cursor-pointer transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
-
-        @* Left side - Meeting info *@
-        <div class="w-64 shrink-0 border-r border-gray-800 pr-6">
-            <h3 class="text-sm text-gray-400 mb-1">Abdulkareem Alabi</h3>
-            <h2 class="text-xl font-semibold mb-4">30 Min Meeting</h2>
-            <div class="flex items-center gap-2 text-sm text-gray-400 mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                     stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
-                </svg>
-                30m
-            </div>
-            <div class="flex items-center gap-2 text-sm text-gray-400 mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                     stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-                Google Meet
-            </div>
-            <div class="flex items-center gap-2 text-sm text-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                     stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Africa/Lagos
-            </div>
-        </div>
-
-        @* Center - Calendar *@
-        <div class="flex-1">
-            <div class="flex items-center justify-between mb-6">
-                <h3 id="calendar-month-year" class="text-lg font-semibold"></h3>
-                <div class="flex gap-2">
-                    <button onclick="changeMonth(-1)" class="text-gray-400 hover:text-white cursor-pointer p-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                             stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-                    <button onclick="changeMonth(1)" class="text-gray-400 hover:text-white cursor-pointer p-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                             stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
+            @* Left side - Meeting info *@
+            <div class="w-64 shrink-0 border-r theme-modal-border border-gray-800 pr-6">
+                <h3 class="text-sm theme-modal-muted text-gray-400 mb-1">Abdulkareem Alabi</h3>
+                <h2 class="text-xl font-semibold mb-4">30 Min Meeting</h2>
+                <div class="flex items-center gap-2 text-sm theme-modal-muted text-gray-400 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
+                    </svg>
+                    30m
+                </div>
+                <div class="flex items-center gap-2 text-sm theme-modal-muted text-gray-400 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Google Meet
+                </div>
+                <div class="flex items-center gap-2 text-sm theme-modal-muted text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Africa/Lagos
                 </div>
             </div>
-            <div class="grid grid-cols-7 gap-1 text-center text-xs text-gray-400 mb-2">
-                <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
-            </div>
-            <div id="calendar-grid" class="grid grid-cols-7 gap-1 text-center"></div>
-        </div>
 
-        @* Right side - Time slots *@
-        <div id="time-slots-panel" class="w-52 shrink-0 border-l border-gray-800 pl-6 hidden">
-            <div class="flex items-center justify-between mb-4">
-                <h3 id="selected-date-label" class="text-lg font-semibold"></h3>
+            @* Center - Calendar *@
+            <div class="flex-1">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 id="calendar-month-year" class="text-lg font-semibold"></h3>
+                    <div class="flex gap-2">
+                        <button onclick="changeMonth(-1)" class="text-gray-400 hover:text-white cursor-pointer p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button onclick="changeMonth(1)" class="text-gray-400 hover:text-white cursor-pointer p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-7 gap-1 text-center text-xs text-gray-400 mb-2">
+                    <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+                </div>
+                <div id="calendar-grid" class="grid grid-cols-7 gap-1 text-center"></div>
             </div>
-            <div id="time-slots-list" class="space-y-2 max-h-100 overflow-y-auto"></div>
+
+            @* Right side - Time slots *@
+            <div id="time-slots-panel" class="w-52 shrink-0 border-l theme-modal-border border-gray-800 pl-6 hidden">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 id="selected-date-label" class="text-lg font-semibold"></h3>
+                </div>
+                <div id="time-slots-list" class="space-y-2 max-h-100 overflow-y-auto"></div>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    function openContactModal() {
-        var modal = document.getElementById('contact-modal');
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-    }
-
-    function closeContactModal() {
-        var modal = document.getElementById('contact-modal');
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-    }
-
-    function selectContactType(checkbox) {
-        var checkboxes = document.querySelectorAll('#contact-type-group input[type="checkbox"]');
-        checkboxes.forEach(function (cb) {
-            if (cb !== checkbox) {
-                cb.checked = false;
-            }
-        });
-        checkbox.checked = true;
-
-        var labels = document.querySelectorAll('.contact-type-label');
-        labels.forEach(function (label) {
-            label.classList.remove('bg-blue-600', 'border-blue-600');
-            label.classList.add('border-gray-700');
-        });
-        var parent = checkbox.closest('.contact-type-label');
-        parent.classList.remove('border-gray-700');
-        parent.classList.add('bg-blue-600', 'border-blue-600');
-    }
-
-    var calendarYear = 2026;
-    var calendarMonth = 2; // March (0-indexed)
-    var selectedDate = null;
-
-    var timeSlots = [
-        '10:00am', '10:30am', '11:00am', '11:30am',
-        '12:00pm', '12:30pm', '1:00pm', '1:30pm',
-        '2:00pm', '2:30pm', '3:00pm', '3:30pm',
-        '4:00pm', '4:30pm', '5:00pm'
-    ];
-
-    function openScheduleModal() {
-        var modal = document.getElementById('schedule-modal');
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        renderCalendar();
-    }
-
-    function closeScheduleModal() {
-        var modal = document.getElementById('schedule-modal');
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        document.getElementById('time-slots-panel').classList.add('hidden');
-        selectedDate = null;
-    }
-
-    function changeMonth(dir) {
-        calendarMonth += dir;
-        if (calendarMonth > 11) { calendarMonth = 0; calendarYear++; }
-        if (calendarMonth < 0) { calendarMonth = 11; calendarYear--; }
-        selectedDate = null;
-        document.getElementById('time-slots-panel').classList.add('hidden');
-        renderCalendar();
-    }
-
-    function renderCalendar() {
-        var months = ['January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'];
-        var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-        document.getElementById('calendar-month-year').textContent = months[calendarMonth] + ' ' + calendarYear;
-
-        var firstDay = new Date(calendarYear, calendarMonth, 1).getDay();
-        var daysInMonth = new Date(calendarYear, calendarMonth + 1, 0).getDate();
-        var today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        var grid = document.getElementById('calendar-grid');
-        grid.innerHTML = '';
-
-        for (var i = 0; i < firstDay; i++) {
-            var empty = document.createElement('div');
-            empty.className = 'p-3';
-            grid.appendChild(empty);
+    <script>
+        function openContactModal() {
+            var modal = document.getElementById('contact-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
         }
 
-        for (var d = 1; d <= daysInMonth; d++) {
-            var cell = document.createElement('button');
-            var cellDate = new Date(calendarYear, calendarMonth, d);
-            var isPast = cellDate < today;
-            var isToday = cellDate.getTime() === today.getTime();
-            var isSelected = selectedDate && selectedDate.getTime() === cellDate.getTime();
-
-            cell.textContent = d;
-            cell.setAttribute('data-day', d);
-
-            if (isPast) {
-                cell.className = 'p-3 text-sm text-gray-600 cursor-default rounded-sm';
-            } else if (isSelected) {
-                cell.className = 'p-3 text-sm bg-white text-black font-semibold rounded-sm cursor-pointer';
-            } else if (isToday) {
-                cell.className = 'p-3 text-sm bg-white text-black font-semibold rounded-sm cursor-pointer relative';
-                var dot = document.createElement('span');
-                dot.className = 'absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-black rounded-full';
-                cell.appendChild(dot);
-            } else {
-                cell.className = 'p-3 text-sm bg-gray-700 text-white rounded-sm cursor-pointer hover:bg-gray-600 transition-colors';
-            }
-
-            if (!isPast) {
-                (function (day) {
-                    cell.onclick = function () { selectDate(day); };
-                })(d);
-            }
-
-            grid.appendChild(cell);
+        function closeContactModal() {
+            var modal = document.getElementById('contact-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
         }
-    }
 
-    function selectDate(day) {
-        selectedDate = new Date(calendarYear, calendarMonth, day);
-        renderCalendar();
-        showTimeSlots(day);
-    }
+        function selectContactType(checkbox) {
+            var checkboxes = document.querySelectorAll('#contact-type-group input[type="checkbox"]');
+            checkboxes.forEach(function (cb) {
+                if (cb !== checkbox) {
+                    cb.checked = false;
+                }
+            });
+            checkbox.checked = true;
 
-    function showTimeSlots(day) {
-        var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-        var date = new Date(calendarYear, calendarMonth, day);
-        var dayName = days[date.getDay()];
+            var labels = document.querySelectorAll('.contact-type-label');
+            labels.forEach(function (label) {
+                label.classList.remove('bg-blue-600', 'border-blue-600');
+                label.classList.add('border-gray-700');
+            });
+            var parent = checkbox.closest('.contact-type-label');
+            parent.classList.remove('border-gray-700');
+            parent.classList.add('bg-blue-600', 'border-blue-600');
+        }
 
-        document.getElementById('selected-date-label').textContent = dayName + ' ' + day;
-        var panel = document.getElementById('time-slots-panel');
-        panel.classList.remove('hidden');
+        var calendarYear = 2026;
+        var calendarMonth = 2; // March (0-indexed)
+        var selectedDate = null;
 
-        var list = document.getElementById('time-slots-list');
-        list.innerHTML = '';
+        var timeSlots = [
+            '10:00am', '10:30am', '11:00am', '11:30am',
+            '12:00pm', '12:30pm', '1:00pm', '1:30pm',
+            '2:00pm', '2:30pm', '3:00pm', '3:30pm',
+            '4:00pm', '4:30pm', '5:00pm'
+        ];
 
-        timeSlots.forEach(function (slot) {
-            var btn = document.createElement('button');
-            btn.textContent = slot;
-            btn.className = 'w-full py-2 px-3 text-sm border border-gray-600 rounded-sm text-white hover:bg-gray-700 cursor-pointer transition-colors text-center';
-            btn.onclick = function () { confirmSlot(day, slot); };
-            list.appendChild(btn);
-        });
-    }
+        function openScheduleModal() {
+            var modal = document.getElementById('schedule-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            renderCalendar();
+        }
 
-    function confirmSlot(day, slot) {
-        var months = ['January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'];
-        alert('Meeting scheduled for ' + months[calendarMonth] + ' ' + day + ', ' + calendarYear + ' at ' + slot + '.\nA confirmation will be sent to your email.');
-        closeScheduleModal();
-    }
-</script>
+        function closeScheduleModal() {
+            var modal = document.getElementById('schedule-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.getElementById('time-slots-panel').classList.add('hidden');
+            selectedDate = null;
+        }
+
+        function changeMonth(dir) {
+            calendarMonth += dir;
+            if (calendarMonth > 11) { calendarMonth = 0; calendarYear++; }
+            if (calendarMonth < 0) { calendarMonth = 11; calendarYear--; }
+            selectedDate = null;
+            document.getElementById('time-slots-panel').classList.add('hidden');
+            renderCalendar();
+        }
+
+        function renderCalendar() {
+            var months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+            var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+            document.getElementById('calendar-month-year').textContent = months[calendarMonth] + ' ' + calendarYear;
+
+            var firstDay = new Date(calendarYear, calendarMonth, 1).getDay();
+            var daysInMonth = new Date(calendarYear, calendarMonth + 1, 0).getDate();
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            var grid = document.getElementById('calendar-grid');
+            grid.innerHTML = '';
+
+            for (var i = 0; i < firstDay; i++) {
+                var empty = document.createElement('div');
+                empty.className = 'p-3';
+                grid.appendChild(empty);
+            }
+
+            for (var d = 1; d <= daysInMonth; d++) {
+                var cell = document.createElement('button');
+                var cellDate = new Date(calendarYear, calendarMonth, d);
+                var isPast = cellDate < today;
+                var isToday = cellDate.getTime() === today.getTime();
+                var isSelected = selectedDate && selectedDate.getTime() === cellDate.getTime();
+
+                cell.textContent = d;
+                cell.setAttribute('data-day', d);
+
+                if (isPast) {
+                    cell.className = 'p-3 text-sm text-gray-600 cursor-default rounded-sm';
+                } else if (isSelected) {
+                    cell.className = 'p-3 text-sm bg-white text-black font-semibold rounded-sm cursor-pointer';
+                } else if (isToday) {
+                    cell.className = 'p-3 text-sm bg-white text-black font-semibold rounded-sm cursor-pointer relative';
+                    var dot = document.createElement('span');
+                    dot.className = 'absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-black rounded-full';
+                    cell.appendChild(dot);
+                } else {
+                    cell.className = 'p-3 text-sm bg-gray-700 text-white rounded-sm cursor-pointer hover:bg-gray-600 transition-colors';
+                }
+
+                if (!isPast) {
+                    (function (day) {
+                        cell.onclick = function () { selectDate(day); };
+                    })(d);
+                }
+
+                grid.appendChild(cell);
+            }
+        }
+
+        function selectDate(day) {
+            selectedDate = new Date(calendarYear, calendarMonth, day);
+            renderCalendar();
+            showTimeSlots(day);
+        }
+
+        function showTimeSlots(day) {
+            var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            var date = new Date(calendarYear, calendarMonth, day);
+            var dayName = days[date.getDay()];
+
+            document.getElementById('selected-date-label').textContent = dayName + ' ' + day;
+            var panel = document.getElementById('time-slots-panel');
+            panel.classList.remove('hidden');
+
+            var list = document.getElementById('time-slots-list');
+            list.innerHTML = '';
+
+            timeSlots.forEach(function (slot) {
+                var btn = document.createElement('button');
+                btn.textContent = slot;
+                btn.className = 'w-full py-2 px-3 text-sm border border-gray-600 rounded-sm text-white hover:bg-gray-700 cursor-pointer transition-colors text-center';
+                btn.onclick = function () { confirmSlot(day, slot); };
+                list.appendChild(btn);
+            });
+        }
+
+        function confirmSlot(day, slot) {
+            var months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+            alert('Meeting scheduled for ' + months[calendarMonth] + ' ' + day + ', ' + calendarYear + ' at ' + slot + '.\nA confirmation will be sent to your email.');
+            closeScheduleModal();
+        }
+    </script>
