@@ -31,11 +31,15 @@
         </div>
     </div>
 
-    @* Bottom legal links *@
+    @* Bottom bar *@
     <div class="border-t border-gray-800 px-10 py-5">
-        <div class="flex items-center gap-6 text-xs tracking-widest uppercase text-gray-500">
-            <span class="hover:text-white transition-colors cursor-pointer">Privacy Policy</span>
-            <span class="hover:text-white transition-colors cursor-pointer">Terms and Conditions</span>
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-6 text-xs tracking-widest uppercase text-gray-500">
+                <a href="/privacy" class="hover:text-white transition-colors cursor-pointer">Privacy Policy</a>
+                <span class="hover:text-white transition-colors cursor-pointer"
+                      onclick="openContactModal()">Contact</span>
+            </div>
+            <p class="text-xs text-gray-500">&copy; @DateTime.Now.Year Abdulkareem Alabi. All rights reserved.</p>
         </div>
     </div>
 </footer>
