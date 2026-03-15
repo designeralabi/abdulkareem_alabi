@@ -5,9 +5,18 @@
     <div id="sidebar"
          class="bg-black h-screen px-12 w-[50%] mx-auto flex flex-col justify-start overflow-y-auto relative custom-scrollbar">
         <div class="flex items-center justify-between my-6">
-            <h3 class="text-xl font-light">Open to Work</h3>
-            @* Theme toggle button *@
-            <button onclick="toggleTheme()" class="z-50 cursor-pointer p-2 rounded-full">
+            <h3 class="text-xl font-light" data-i18n="openToWork">Open to Work</h3>
+            <div class="flex items-center gap-x-3">
+                @* Language toggle *@
+                <div id="lang-toggle" class="flex items-center gap-x-1 text-xs tracking-wider">
+                    <button onclick="switchLang('en')" class="lang-btn lang-active cursor-pointer px-1 py-0.5 text-white border-b border-white font-medium transition-colors">EN</button>
+                    <span class="text-gray-600">/</span>
+                    <button onclick="switchLang('fr')" class="lang-btn cursor-pointer px-1 py-0.5 text-gray-500 hover:text-gray-300 transition-colors">FR</button>
+                    <span class="text-gray-600">/</span>
+                    <button onclick="switchLang('nl')" class="lang-btn cursor-pointer px-1 py-0.5 text-gray-500 hover:text-gray-300 transition-colors">NL</button>
+                </div>
+                @* Theme toggle button *@
+                <button onclick="toggleTheme()" class="z-50 cursor-pointer p-2 rounded-full">
                 <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -19,6 +28,7 @@
                           d="M21.752 15.002A9.718 9.718 0 0112.003 21c-5.385 0-9.75-4.365-9.75-9.75 0-4.296 2.784-7.943 6.648-9.252a.75.75 0 01.958.884 8.25 8.25 0 0011.009 11.009.75.75 0 01.884.958z" />
                 </svg>
             </button>
+            </div>
         </div>
 
         <div>
@@ -27,10 +37,10 @@
                 <Blazicon Svg="GoogleMaterialOutlinedIcon.AddAlert" class="bg-red-700 h-48 w-48"></Blazicon>
             </div>
 
-            <h1 class="text-4xl font-light outline-none">
+            <h1 class="text-4xl font-light outline-none" data-i18n="greeting">
                 Hi, I'm 👋<br />Abdulkareem <span class="font-medium">Alabi</span>
             </h1>
-            <h3 class="my-4 text-sm">
+            <h3 class="my-4 text-sm" data-i18n="bio">
                 Self-taught FullStack Engineer specializing in ASP.NET Core, with 5+ years of experience building
                 responsive front-ends, scalable Web APIs, and reliable C# code. Key achievements include reducing API
                 response times by 40%, enhancing code reliability through testing, and supporting high-traffic
@@ -40,23 +50,23 @@
             <div class="flex flex-col gap-y-2 text-sm mt-6">
                 <div class="flex items-center gap-x-2">
                     <h3 onclick="openContactModal()"
-                        class="theme-btn cursor-pointer bg-white text-black px-4 py-3 rounded-sm font-medium">Let's Talk
+                        class="theme-btn cursor-pointer bg-white text-black px-4 py-3 rounded-sm font-medium" data-i18n="letsTalk">Let's Talk
                     </h3>
                     <a href="mailto:bdlkrmalabi@gmail.com"
-                       class="bg-gray-600/40 text-white px-4 py-3 rounded-sm cursor-pointer">Send Email</a>
+                       class="bg-gray-600/40 text-white px-4 py-3 rounded-sm cursor-pointer" data-i18n="sendEmail">Send Email</a>
                 </div>
                 <div class="flex items-center gap-x-2">
                     <a href="https://www.linkedin.com/in/abdulkareem-alabi-3985523a4/" target="_blank">
                         <h3 class="bg-blue-600 text-white px-4 py-3 rounded-sm cursor-pointer">LinkedIn</h3>
                     </a>
-                    <h3 class="theme-btn cursor-pointer bg-white text-black px-4 py-3 rounded-sm font-medium">Download
+                    <h3 class="theme-btn cursor-pointer bg-white text-black px-4 py-3 rounded-sm font-medium" data-i18n="downloadResume">Download
                         Resume</h3>
                     </div>
                 </div>
             </div>
 
             <div class="mt-9">
-                <h3 class="text-2xl">Services</h3>
+                <h3 class="text-2xl" data-i18n="services">Services</h3>
                 <div class="mt-4 flex flex-wrap gap-2">
                     @foreach (var stack in abdulkareem_alabi.Data.TechStackData.TechStacks)
                     {
@@ -111,4 +121,65 @@
              if (isDark) {             root.classList.remove('dark');             root.classList.add('light');             root.classList.remove('text-white');             root.classList.add('text-black');             sidebar.classList.remove('bg-black');             sidebar.classList.add('bg-white');             mainContent.classList.remove('bg-amber-500');             mainContent.classList.add('bg-gray-100');             document.querySelectorAll('.theme-btn').forEach(function (btn) {                 btn.classList.remove('bg-white', 'text-black');                 btn.classList.add('bg-black', 'text-white');             });             document.querySelectorAll('.service-tag').forEach(function (tag) {                 tag.classList.remove('bg-gray-300/10');                 tag.classList.add('bg-gray-200');             });             document.querySelectorAll('.theme-modal').forEach(function (modal) {                 modal.classList.remove('bg-gray-950', 'bg-black', 'text-white');                 modal.classList.add('bg-white', 'text-black');             });             document.querySelectorAll('.theme-modal .theme-modal-border').forEach(function (el) {                 el.classList.remove('border-gray-800');                 el.classList.add('border-gray-200');             });             document.querySelectorAll('.theme-modal .theme-modal-muted').forEach(function (el) {                 el.classList.remove('text-gray-400');                 el.classList.add('text-gray-500');             });             sunIcon.classList.remove('hidden');             moonIcon.classList.add('hidden');         } else {             root.classList.remove('light');             root.classList.add('dark');             root.classList.remove('text-black');             root.classList.add('text-white');             sidebar.classList.remove('bg-white');             sidebar.classList.add('bg-black');             mainContent.classList.remove('bg-gray-100');             mainContent.classList.add('bg-amber-500');             document.querySelectorAll('.theme-btn').forEach(function (btn) {                 btn.classList.remove('bg-black', 'text-white');                 btn.classList.add('bg-white', 'text-black');             });             document.querySelectorAll('.service-tag').forEach(function (tag) {                 tag.classList.remove('bg-gray-200');                 tag.classList.add('bg-gray-300/10');             });             document.querySelectorAll('.theme-modal').forEach(function (modal) {                 modal.classList.remove('bg-white', 'text-black');                 modal.classList.add('bg-gray-950', 'text-white');             });             document.querySelectorAll('.theme-modal .theme-modal-border').forEach(function (el) {                 el.classList.remove('border-gray-200');                 el.classList.add('border-gray-800');             });             document.querySelectorAll('.theme-modal .theme-modal-muted').forEach(function (el) {                 el.classList.remove('text-gray-500');                 el.classList.add('text-gray-400');             });             sunIcon.classList.add('hidden');             moonIcon.classList.remove('hidden');         }         localStorage.setItem('theme', isDark ? 'light' : 'dark');     }
          // Apply saved theme on load     (function () {         const saved = localStorage.getItem('theme');         if (saved === 'light') {             toggleTheme();         }     })();
          // Spin badge on scroll     (function () {         var spinText = document.getElementById('spin-text');         var mainContent = document.getElementById('main-content');         if (spinText && mainContent) {             var rotation = 0;             mainContent.addEventListener('scroll', function () {                 rotation = mainContent.scrollTop * 0.15;                 spinText.style.transform = 'rotate(' + rotation + 'deg)';             });         }     })();
+
+    // Language translations
+    var translations = {
+        en: {
+            openToWork: 'Open to Work',
+            greeting: 'Hi, I\'m 👋<br />Abdulkareem <span class="font-medium">Alabi</span>',
+            bio: 'Self-taught FullStack Engineer specializing in ASP.NET Core, with 5+ years of experience building responsive front-ends, scalable Web APIs, and reliable C# code. Key achievements include reducing API response times by 40%, enhancing code reliability through testing, and supporting high-traffic applications. Proficient in C#, .NET, unit testing, and Agile environments. Eager to contribute to innovative features and grow within a passionate remote team. Let\'s collaborate!',
+            letsTalk: 'Let\'s Talk',
+            sendEmail: 'Send Email',
+            downloadResume: 'Download Resume',
+            services: 'Services'
+        },
+        fr: {
+            openToWork: 'Disponible',
+            greeting: 'Salut, je suis 👋<br />Abdulkareem <span class="font-medium">Alabi</span>',
+            bio: 'Ingénieur FullStack autodidacte spécialisé en ASP.NET Core, avec plus de 5 ans d\'expérience dans la création de front-ends réactifs, d\'APIs Web évolutives et de code C# fiable. Réalisations clés : réduction des temps de réponse API de 40 %, amélioration de la fiabilité du code par les tests et support d\'applications à fort trafic. Compétent en C#, .NET, tests unitaires et environnements Agile. Désireux de contribuer à des fonctionnalités innovantes au sein d\'une équipe passionnée. Collaborons !',
+            letsTalk: 'Discutons',
+            sendEmail: 'Envoyer un Email',
+            downloadResume: 'Télécharger le CV',
+            services: 'Services'
+        },
+        nl: {
+            openToWork: 'Beschikbaar',
+            greeting: 'Hoi, ik ben 👋<br />Abdulkareem <span class="font-medium">Alabi</span>',
+            bio: 'Autodidact FullStack Engineer gespecialiseerd in ASP.NET Core, met meer dan 5 jaar ervaring in het bouwen van responsieve front-ends, schaalbare Web API\'s en betrouwbare C#-code. Belangrijkste prestaties: API-responstijden met 40% verkort, codebetrouwbaarheid verbeterd door testen en ondersteuning van applicaties met veel verkeer. Bekwaam in C#, .NET, unit testing en Agile-omgevingen. Enthousiast om bij te dragen aan innovatieve functies binnen een gepassioneerd remote team. Laten we samenwerken!',
+            letsTalk: 'Laten we praten',
+            sendEmail: 'E-mail sturen',
+            downloadResume: 'CV Downloaden',
+            services: 'Diensten'
+        }
+    };
+
+    var currentLang = localStorage.getItem('lang') || 'en';
+
+    function switchLang(lang) {
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.remove('lang-active', 'text-white', 'border-b', 'border-white', 'font-medium');
+            btn.classList.add('text-gray-500');
+        });
+        var activeBtn = document.querySelector('.lang-btn[onclick*="' + lang + '"]');
+        if (activeBtn) {
+            activeBtn.classList.add('lang-active', 'text-white', 'border-b', 'border-white', 'font-medium');
+            activeBtn.classList.remove('text-gray-500');
+        }
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            var key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+    }
+
+    // Apply saved language on load
+    (function() {
+        var saved = localStorage.getItem('lang');
+        if (saved && saved !== 'en') {
+            switchLang(saved);
+        }
+    })();
     </script>
